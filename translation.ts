@@ -105,6 +105,9 @@ export const translations = {
         },
         gallery: {
             title: "Gallery",
+            subtitle: "A visual tour of our facilities and community initiatives",
+            pageTitle: "Photo Gallery",
+            pageSubtitle: "A comprehensive look at our facilities, events, and community initiatives",
             imageAlt: "Gallery Image",
         },
         covid: {
@@ -138,6 +141,7 @@ export const translations = {
                     number: "Dial 100",
                 },
             },
+
             copyright: "© {year} Developed and maintained by Videntur Executors Pvt Ltd.",
         },
     },
@@ -245,6 +249,9 @@ export const translations = {
         },
         gallery: {
             title: "गैलरी",
+            subtitle: "हमारी सुविधाओं और सामुदायिक पहलों का एक दृश्य दौरा",
+            pageTitle: "फ़ोटो गैलरी",
+            pageSubtitle: "हमारी सुविधाओं, घटनाओं और सामुदायिक पहलों का एक व्यापक रूप",
             imageAlt: "गैलरी छवि",
         },
         covid: {
@@ -278,6 +285,7 @@ export const translations = {
                     number: "100 डायल करें",
                 },
             },
+
             copyright: "© {year} Developed and maintained by Videntur Executors Pvt Ltd.",
         },
     },
@@ -385,6 +393,9 @@ export const translations = {
         },
         gallery: {
             title: "ଗ୍ୟାଲେରୀ",
+            subtitle: "ଆମର ସୁବିଧା ଏବଂ ସମ୍ପ୍ରଦାୟର ପଦକ୍ଷେପଗୁଡ଼ିକର ଏକ ଦୃଶ୍ୟ ଭ୍ରମଣ",
+            pageTitle: "ଫଟୋ ଗ୍ୟାଲେରୀ",
+            pageSubtitle: "ଆମର ସୁବିଧା, ଇଭେଣ୍ଟ ଏବଂ ସମ୍ପ୍ରଦାୟର ପଦକ୍ଷେପଗୁଡ଼ିକର ଏକ ବ୍ୟାପକ ଦୃଶ୍ୟ",
             imageAlt: "ଗ୍ୟାଲେରୀ ଚିତ୍ର",
         },
         covid: {
@@ -418,6 +429,7 @@ export const translations = {
                     number: "୧୦୦ ଡାଏଲ୍ କରନ୍ତୁ",
                 },
             },
+
             copyright: "© {year} Developed and maintained by Videntur Executors Pvt Ltd.",
         },
     },

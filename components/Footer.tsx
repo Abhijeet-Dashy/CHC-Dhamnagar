@@ -16,15 +16,17 @@ export const Footer: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          
+
           {/* 1. About Section */}
           <div>
             <h3 className="text-white text-lg font-bold mb-4" itemProp="name">
-              {t.footer.about.title} {/* "Community Health Center, Dhamnagar" */}
+              {t.footer.about.title}
             </h3>
             <p className="text-slate-400 text-sm leading-relaxed mb-4" itemProp="description">
               {t.footer.about.desc}
             </p>
+
+
           </div>
 
           {/* 2. Contact Info with Local SEO Schema */}
@@ -37,10 +39,10 @@ export const Footer: React.FC = () => {
                 <li className="flex items-start">
                   <MapPin className="w-5 h-5 text-medical-500 mr-3 mt-1 shrink-0" aria-hidden="true" />
                   {/* Inline Schema for Address */}
-                  <span 
+                  <span
                     className="whitespace-pre-line"
-                    itemProp="address" 
-                    itemScope 
+                    itemProp="address"
+                    itemScope
                     itemType="https://schema.org/PostalAddress"
                   >
                     <span itemProp="streetAddress">{t.footer.contact.address}</span>
@@ -68,7 +70,7 @@ export const Footer: React.FC = () => {
             <div className="mt-6 rounded-lg overflow-hidden shadow-sm border border-slate-700">
               <iframe
                 // Updated to a valid search query for CHC Dhamnagar
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.527376043876!2d86.4293043149174!3d20.92051698605557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1be706cba3f373%3A0x7e29783f88045507!2sCHC%20Dhamnagar!5e0!3m2!1sen!2sin!4v1698245612345!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3727.0089222529705!2d86.4373579!3d20.9119607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1bf1a0da4f6d3d%3A0xad134ef45273e09!2sChc%20dhamnagar!5e0!3m2!1sen!2sin!4v1768601630483!5m2!1sen!2sin"
                 width="100%"
                 height="200"
                 style={{ border: 0 }}
@@ -80,6 +82,8 @@ export const Footer: React.FC = () => {
               ></iframe>
             </div>
           </div>
+
+
 
           {/* 3. Emergency Links */}
           <div>
@@ -115,11 +119,10 @@ export const Footer: React.FC = () => {
         {/* Copyright */}
         <div className="border-t border-slate-800 dark:border-slate-900 mt-12 pt-8 text-center text-sm text-slate-500">
           <p>
-            &copy; {currentYear} {t.footer.copyright.replace("{year}", "")} | 
-            <span className="ml-1">Maintained by Videntur Executors Pvt Ltd.</span>
+            &copy; {currentYear} {t.footer.copyright.replace("{year}", "")}
           </p>
         </div>
       </div>
-    </footer>
+    </footer >
   );
 };

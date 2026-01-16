@@ -16,7 +16,7 @@ export const Gallery: React.FC = () => {
     <Section
       id="gallery"
       title={t.gallery.title}
-      subtitle="A visual tour of our facilities and community initiatives"
+      subtitle={t.gallery.subtitle}
       bg="gray"
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
@@ -37,10 +37,10 @@ export const Gallery: React.FC = () => {
                 loading="lazy"
                 width="400" // 3. CLS Prevention: Reserves space to stop layout shift
                 height="300"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-500"
               />
             </button>
-            
+
             <figcaption className="p-4 flex-grow border-t border-slate-100 dark:border-slate-700"> {/* 4. Semantic Tag: Links text to image */}
               <h3 className="text-lg font-semibold text-slate-800 dark:text-white mb-2">
                 {item.alt}
