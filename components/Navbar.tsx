@@ -92,11 +92,10 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled
           ? "bg-white/95 dark:bg-slate-900/95 shadow-md py-2"
           : "bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm py-4"
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -104,7 +103,11 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
           <div className="flex items-center space-x-2">
             <div className="bg-transparent p-0 rounded-lg">
               <img
-                src="https://ik.imagekit.io/Adutta1908/CHC_DHAMNAGAR_PHOTOS/logo_chcd.png"
+                src={
+                  darkMode
+                    ? "https://ik.imagekit.io/DPEDITS29/Zygon2K26/Gemini_Generated_Image_4m6p724m6p724m6p-removebg-preview.png" // TODO: Replace with actual dark mode logo URL
+                    : "https://ik.imagekit.io/Adutta1908/CHC_DHAMNAGAR_PHOTOS/logo_chcd.png"
+                }
                 alt="CHC Dhamnagar Logo"
                 className="h-12 w-auto"
               />

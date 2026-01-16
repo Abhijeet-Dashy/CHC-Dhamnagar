@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HelmetProvider, Helmet } from "react-helmet-async"; // <--- 1. Import this
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { Home } from "./pages/Home";
@@ -22,22 +23,34 @@ const App: React.FC = () => {
   const toggleTheme = () => setDarkMode(!darkMode);
 
   return (
-    <Router>
-      <LanguageProvider>
-        <ScrollToTop />
-        <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300 flex flex-col">
-          <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
-          <main className="flex-grow">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/documents" element={<DocumentPage />} />
-              <Route path="/gallery" element={<GalleryPage />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </LanguageProvider>
-    </Router>
+    // 2. Wrap everything in HelmetProvider
+    <HelmetProvider>
+      <Router>
+        <LanguageProvider>
+          {/* 3. Global Default SEO Settings (Safety Net) */}
+          <Helmet>
+            <title>CHC Dhamnagar | Community Health Center</title>
+            <meta name="description" content="Official portal for Community Health Center, Dhamnagar." />
+            {/* Tells Google this site is in English (important for ranking) */}
+            <html lang="en" /> 
+            <meta name="theme-color" content="#2563eb" />
+          </Helmet>
+
+          <ScrollToTop />
+          <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300 flex flex-col">
+            <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
+            <main className="flex-grow">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/documents" element={<DocumentPage />} />
+                <Route path="/gallery" element={<GalleryPage />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
+        </LanguageProvider>
+      </Router>
+    </HelmetProvider>
   );
 };
 

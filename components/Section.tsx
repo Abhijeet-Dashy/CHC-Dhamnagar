@@ -17,9 +17,14 @@ export const Section: React.FC<SectionProps> = ({
   className = '', 
   bg = 'white' 
 }) => {
+  // Create a unique ID for the heading based on the section ID
+  // This helps screen readers associate the section with its title
+  const titleId = id ? `${id}-heading` : undefined;
+
   return (
     <section 
       id={id} 
+      aria-labelledby={titleId} // <--- Links this section to its specific title
       className={`scroll-mt-24 py-16 px-4 sm:px-6 lg:px-8 transition-colors duration-300 ${
         bg === 'gray' 
           ? 'bg-slate-50 dark:bg-slate-800' 
@@ -28,9 +33,12 @@ export const Section: React.FC<SectionProps> = ({
     >
       <div className="max-w-7xl mx-auto">
         {(title || subtitle) && (
-          <div className="text-center mb-12">
+          <header className="text-center mb-12"> {/* Changed div to header for better semantics */}
             {title && (
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-white sm:text-4xl mb-4">
+              <h2 
+                id={titleId} // <--- The target for aria-labelledby
+                className="text-3xl font-bold text-slate-900 dark:text-white sm:text-4xl mb-4"
+              >
                 {title}
               </h2>
             )}
@@ -39,8 +47,12 @@ export const Section: React.FC<SectionProps> = ({
                 {subtitle}
               </p>
             )}
-            <div className="w-24 h-1 bg-medical-600 mx-auto mt-6 rounded-full opacity-80"></div>
-          </div>
+            {/* Decorative bar: aria-hidden tells Google to ignore this visual element */}
+            <div 
+              className="w-24 h-1 bg-medical-600 mx-auto mt-6 rounded-full opacity-80" 
+              aria-hidden="true" 
+            />
+          </header>
         )}
         {children}
       </div>
