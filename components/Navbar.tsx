@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Activity, Moon, Sun } from 'lucide-react';
-import { NavItem } from '../types';
+import React, { useState, useEffect } from "react";
+import { Menu, X, Activity, Moon, Sun } from "lucide-react";
+import { NavItem } from "../types";
 
 interface NavbarProps {
   darkMode: boolean;
@@ -9,8 +9,8 @@ interface NavbarProps {
 
 const navItems: NavItem[] = [
   { label: 'Home', href: '/#home' },
-  { label: 'Departments', href: '/#departments' },
   { label: 'Services', href: '/#services' },
+  { label: 'Departments', href: '/#departments' },
   { label: 'Documents', href: '/#documents' },
   { label: 'Gallery', href: '/#gallery' },
   { label: 'Contact', href: '/#contact' },
@@ -24,31 +24,32 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav 
+    <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/95 dark:bg-slate-900/95 shadow-md py-2' 
-          : 'bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm py-4'
+        isScrolled
+          ? "bg-white/95 dark:bg-slate-900/95 shadow-md py-2"
+          : "bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="bg-medical-600 p-2 rounded-lg text-white shadow-lg shadow-medical-500/30">
-              <Activity size={24} />
+          <div className="flex items-center space-x-1">
+            <div className="bg-transparent p-0 rounded-lg">
+              <img
+                src="https://ik.imagekit.io/Adutta1908/CHC_DHAMNAGAR_PHOTOS/logo_chcd.png"
+                alt="CHC Dhamnagar Logo"
+                className="h-12 w-auto" // Adjust sizing as needed to match the previous icon's presence
+              />
             </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-xl text-slate-900 dark:text-white leading-tight">CHC Dhamnagar</span>
-              <span className="text-xs text-medical-600 dark:text-medical-400 font-medium tracking-wide">GOVT OF ODISHA</span>
-            </div>
+            
           </div>
 
           {/* Desktop Nav */}
@@ -62,8 +63,8 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
                 {item.label}
               </a>
             ))}
-            
-            <button 
+
+            <button
               onClick={toggleTheme}
               className="p-2 text-slate-500 hover:text-medical-600 dark:text-slate-400 dark:hover:text-medical-400 focus:outline-none transition-colors"
               aria-label="Toggle Dark Mode"
@@ -71,8 +72,8 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
               {darkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>
 
-            <a 
-              href="#contact" 
+            <a
+              href="#contact"
               className="bg-medical-600 text-white px-5 py-2.5 rounded-full font-medium hover:bg-medical-700 transition-all shadow-md hover:shadow-lg text-sm"
             >
               Emergency
@@ -81,7 +82,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-4">
-            <button 
+            <button
               onClick={toggleTheme}
               className="p-2 text-slate-500 hover:text-medical-600 dark:text-slate-400 dark:hover:text-medical-400 focus:outline-none"
             >

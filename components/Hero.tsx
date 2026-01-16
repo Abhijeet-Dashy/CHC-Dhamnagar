@@ -3,7 +3,7 @@ import { PhoneCall, Clock, CheckCircle } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
-    <div id="home" className="scroll-mt-24 relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+    <div id="home" className="scroll-mt-24 relative pt-24 pb-16 md:pt-32 md:mt-10 md:pb-24 overflow-hidden bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
       {/* Abstract Background Shape */}
       <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-medical-100 dark:bg-medical-900/30 opacity-50 blur-3xl"></div>
       <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-72 h-72 rounded-full bg-blue-100 dark:bg-blue-900/30 opacity-50 blur-3xl"></div>
@@ -61,10 +61,10 @@ export const Hero: React.FC = () => {
 
           {/* Hero Image */}
           <div className="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
-            <div className="relative mx-auto w-full rounded-2xl shadow-2xl lg:max-w-md overflow-hidden transform hover:scale-[1.01] transition-transform duration-500">
+            <div className="relative mx-auto w-full rounded-2xl shadow-2xl lg:max-w-xl overflow-hidden transform hover:scale-[1.001] transition-transform duration-500">
                <img
                 className="w-full h-full object-cover"
-                src="https://picsum.photos/800/600"
+                src="https://ik.imagekit.io/Adutta1908/CHC_DHAMNAGAR_PHOTOS/ncv.jpeg"
                 alt="CHC Dhamnagar Building"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
