@@ -1,8 +1,11 @@
 import React from "react";
 import { FileText, Download, Calendar, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export const DocumentPage: React.FC = () => {
+  const { t } = useLanguage();
+
   const documents = [
     {
       title: "BMWM_2023_24_1.pdf",
@@ -133,13 +136,13 @@ export const DocumentPage: React.FC = () => {
           className="inline-flex items-center text-medical-600 hover:text-medical-800 dark:text-medical-400 dark:hover:text-medical-200 transition-colors mb-4"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to Home
+          {t.navbar.home}
         </Link>
         <h1 className="text-3xl font-bold text-slate-900 dark:text-white">
-          Document Archive
+          {t.documents.title}
         </h1>
         <p className="mt-2 text-lg text-slate-600 dark:text-slate-300">
-          Access reports, guidelines, and official public disclosures.
+          {t.documents.subtitle}
         </p>
       </div>
 
@@ -181,7 +184,7 @@ export const DocumentPage: React.FC = () => {
                 download
               >
                 <Download className="w-4 h-4 mr-2" />
-                Download File
+                {t.documents.table.download}
               </a>
             </div>
           </div>

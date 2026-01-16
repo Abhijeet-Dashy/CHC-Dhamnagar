@@ -6,6 +6,7 @@ import { Home } from "./pages/Home";
 import DocumentPage from "./pages/Document";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { GalleryPage } from "./pages/GalleryPage";
+import { LanguageProvider } from "./contexts/LanguageContext";
 
 const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -22,18 +23,20 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <ScrollToTop />
-      <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300 flex flex-col">
-        <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/documents" element={<DocumentPage />} />
-            <Route path="/gallery" element={<GalleryPage />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+      <LanguageProvider>
+        <ScrollToTop />
+        <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300 flex flex-col">
+          <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/documents" element={<DocumentPage />} />
+              <Route path="/gallery" element={<GalleryPage />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </LanguageProvider>
     </Router>
   );
 };

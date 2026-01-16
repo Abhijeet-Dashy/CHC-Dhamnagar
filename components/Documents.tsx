@@ -3,6 +3,7 @@ import { FileText, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Document } from "../types";
 import { Section } from "./Section";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const documents: Document[] = [
   {
@@ -28,14 +29,16 @@ const documents: Document[] = [
 ];
 
 export const Documents: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <Section
       id="documents"
-      title="Important Documents"
-      subtitle="Transparency is key. Access our annual Bio-Medical Waste Management (BMWM) reports."
+      title={t.documents.title}
+      subtitle={t.documents.subtitle}
       bg="white"
     >
-      <div className="max-w-4xl mx-auto overflow-hidden bg-white dark:bg-slate-900 shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
+      <div className="max-w-4xl mx-auto overflow-x-auto bg-white dark:bg-slate-900 shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
         <table className="min-w-full divide-y divide-slate-300 dark:divide-slate-700">
           <thead className="bg-slate-50 dark:bg-slate-800">
             <tr>
@@ -43,16 +46,16 @@ export const Documents: React.FC = () => {
                 scope="col"
                 className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-slate-900 dark:text-white sm:pl-6"
               >
-                Document Name
+                {t.documents.table.docName}
               </th>
               <th
                 scope="col"
                 className="px-3 py-3.5 text-left text-sm font-semibold text-slate-900 dark:text-white"
               >
-                Year
+                {t.documents.table.year}
               </th>
               <th scope="col" className="relative py-3.5 pl-3 pr-4 sm:pr-6">
-                <span className="sr-only">Download</span>
+                <span className="sr-only">{t.documents.table.download}</span>
               </th>
             </tr>
           </thead>
@@ -74,7 +77,8 @@ export const Documents: React.FC = () => {
                     href={doc.url}
                     className="text-medical-600 dark:text-medical-400 hover:text-medical-900 dark:hover:text-medical-300 flex items-center justify-end"
                   >
-                    Download <Download className="w-4 h-4 ml-1" />
+                    {t.documents.table.download}{" "}
+                    <Download className="w-4 h-4 ml-1" />
                   </a>
                 </td>
               </tr>
@@ -88,7 +92,7 @@ export const Documents: React.FC = () => {
           to="/documents"
           className="inline-flex items-center px-4 py-2 border border-blue-600 text-sm font-medium rounded-md text-blue-600 bg-white hover:bg-blue-50 dark:bg-slate-800 dark:text-blue-400 dark:border-blue-400 dark:hover:bg-slate-700 transition-colors"
         >
-          Show More Documents
+          {t.navbar.documents}
         </Link>
       </div>
     </Section>
